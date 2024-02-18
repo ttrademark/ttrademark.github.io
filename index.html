@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .fade-out {
+        opacity: 0; /* Set opacity to 0 for fade-out effect */
+    }
+
+    .fade-in {
+        opacity: 1; /* Set opacity to 1 for fade-in effect */
+    }
+</style>
+
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+
+    <!-- Title -->
+    <title>tm.</title>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+
+<style>
+    /* Hide the cursor for the entire document */
+    body {
+        cursor: none;
+    }
+</style>
+
+</head>
+<body>
+
+<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+<script>
+   window.addEventListener("load", (event) => {
+     new cursoreffects.followingDotCursor();
+});
+new cursoreffects.followingDotCursor({ color: ["#FFFFFF"] });
+</script>
+
+    <!-- Div -->
+    <div id="div" hidden></div>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="header-logo">
+                <img src="images/mewzax.gif" alt="trademark">
+            </div>
+
+            <div class="header-links">
+                <ul class="nav-links">
+                    <li class="nav-link"><a draggable="false" href="index.html"></a></li>
+                    <!-- <li class="nav-link"><a href="about.html"></a></li> -->
+                    <!-- <li class="nav-link"><a href="contact.html"></a></li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section class="index">
+        <div class="card">
+            <img id="shuffler" src="" alt="Image">
+            <div class="card-text">
+                <p>hello, my name is</p>
+                <h1>trademark</h1>
+                <p>wsg, i am a random person on the internet.</p>
+            </div>
+            <div class="card-links">
+                <ul>
+                    <li><a draggable="false" target="_blank" href="https://discord.gg/lucid"><i class="fab fa-discord"></i></a></li>
+                    <li><a draggable="false" target="_blank" href="https://www.twitch.tv/ttrademark"><i class="fab fa-twitch"></i></a></li>
+<li><a draggable="false" target="_blank" href="https://www.youtube.com/@2amtrade?sub_confirmation=1"><i class="fab fa-youtube"></i></a></li>
+<li><a draggable="false" target="_blank" href="https://tiktok.com/@.ttrademark"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+
+    <script>
+        // JavaScript for shuffling images every 5 seconds
+        const images = ["images/b.png", "images/b2.png", "images/b3.jpg", "images/b4.jpg", "images/b5.jpg", "images/b6.jpg"]; // List of image URLs
+        let currentIndex = 0;
+        const imageElement = document.getElementById("shuffler");
+
+        function shuffleImage() {
+            imageElement.classList.remove("fade-in"); // Remove fade-in class
+            imageElement.classList.add("fade-out"); // Add fade-out class
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imageElement.src = images[currentIndex];
+                imageElement.classList.remove("fade-out"); // Remove fade-out class
+                imageElement.classList.add("fade-in"); // Add fade-in class
+            }, 500); // Adjust timing to match the transition duration
+        }
+
+        // Initial shuffle
+        shuffleImage();
+
+        // Shuffle every 5 seconds
+        setInterval(shuffleImage, 5000);
+    </script>
+
+</body>
+</html>
